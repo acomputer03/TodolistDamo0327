@@ -23,23 +23,29 @@
 
 <body style="background-color: #3C3C3C;">
   <div id="app">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container">      
       
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       
-        <form class="form-inline my-2 my-lg-0 ml-auto" v-if="!userName" >
-          <input type="text" class="form-control mr-1" placeholder="請輸入姓名" v-model="newname" @keyup.enter="addUser">
-          <button class="btn btn-primary px-4" type="button" @click="addUser">確定</button>
+     
+        <form class="form-inline my-2 my-lg-0 ml-auto" v-if="!userName" >    
+          <div class="input-group mb-3">
+            <input type="text" class="form-control mr-sm-2 mr-1" placeholder="請輸入姓名" v-model="newname" @keyup.enter="addUser">
+            <div class="input-group-append">
+              <button class="btn btn-primary  my-sm-0 px-4" type="button" @click="addUser">確定</button>
+            </div>
+          </div>
+
+
         </form>
         <form class="form-inline my-2 my-lg-0 ml-auto" v-if="userName" >
-          <h3 class="mr-3 mt-2">{{userName}}，歡迎回來</h3>
-          <button class="btn btn-outline-secondary px-4" type="button" @click="Signout">登出</button>
+          <h3 class="mr-3 mt-2  mr-sm-2">{{userName}}，歡迎回來</h3>
+          <button class="btn btn-outline-secondary my-2 my-sm-0 px-4" type="button" @click="Signout">登出</button>
         </form>
-      </div>
+      
     </nav>
 
+
+
+    
     
     <section class="container px-0" >
       <div class="position-relative overflow-hidden p-3 p-md-5  text-center bg-light">
